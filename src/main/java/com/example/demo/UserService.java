@@ -23,10 +23,10 @@ public class UserService {
     private UserRepository userRepository;
 
 
-    public void verifyUser(String username, String password) {
-        UserDetails user = userDetailsService.loadUserByUsername(username);
+    public void verifyUser(String email, String password) {
+        UserDetails user = userDetailsService.loadUserByUsername(email);
         if (!passwordEncoder.matches(password, user.getPassword())) {
-            throw new BadCredentialsException("bad credentials " + username);
+            throw new BadCredentialsException("bad credentials " + email);
         }
     }
 

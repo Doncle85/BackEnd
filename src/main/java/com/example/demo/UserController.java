@@ -18,7 +18,7 @@ public class UserController {
 
     @PostMapping("/login")
     public void login(@RequestBody UserDto user) {
-        userService.verifyUser(user.getUsername(), user.getPassword());
+        userService.verifyUser(user.getEmail(), user.getPassword());
     }
 
 
