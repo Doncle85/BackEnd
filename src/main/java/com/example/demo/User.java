@@ -8,7 +8,15 @@ import java.util.List;
 @Entity(name = "user")
 public class User {
 
+    public int getId() { return id; }
+
+    public void setId(int id) { this.id = id; }
+
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+
+    @Column
     private String username;
 
     @Column
@@ -17,9 +25,7 @@ public class User {
     @Column
     private String email;
 
-    public String getEmail() {
-        return email;
-    }
+    public String getEmail() { return email; }
 
     public void setEmail(String email) {
         this.email = email;
