@@ -53,6 +53,28 @@ public class Bet {
     @GeneratedValue
     private int id;
 
+
+
+    public LocalDateTime getEndbet() {
+        return endbet;
+    }
+
+    public void setEndbet(LocalDateTime endbet) {
+        this.endbet = endbet;
+    }
+
+
+    public String getBet() {
+        return bet;
+    }
+
+    public void setBet(Bet bet) {
+        this.bet = bet;
+    }
+
+    @Column
+    private String bet;
+
     @Column
     private String stake;
 
