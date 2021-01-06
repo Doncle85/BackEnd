@@ -1,8 +1,10 @@
 package com.example.demo;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
+
 
 public class BetDto {
+
 
    public String getBet() {
       return bet;
@@ -20,18 +22,18 @@ public class BetDto {
       this.stake = stake;
    }
 
-   public LocalDateTime getEndbet() {
+   public LocalDate getEndbet() {
       return endbet;
    }
 
-   public void setEndbet(LocalDateTime endbet) {
+   public void setEndbet(LocalDate endbet) {
       this.endbet = endbet;
    }
 
    String bet;
 
-String stake;
+   String stake;
 
-LocalDateTime endbet;
+   LocalDate endbet;
 
 }

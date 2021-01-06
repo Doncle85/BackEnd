@@ -1,7 +1,7 @@
 package com.example.demo;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 @Entity(name = "bet")
 public class Bet {
@@ -38,19 +38,19 @@ public class Bet {
         this.code = code;
     }
 
-    public LocalDateTime getEndebet() {
+    public LocalDate getEndebet() {
         return endbet;
     }
 
-    public void setEndebet(LocalDateTime endebet) {
+    public void setEndebet(LocalDate endebet) {
         this.endbet = endebet;
     }
 
-    public LocalDateTime getEndbet() {
+    public LocalDate getEndbet() {
         return endbet;
     }
 
-    public void setEndbet(LocalDateTime endbet) {
+    public void setEndbet(LocalDate endbet) {
         this.endbet = endbet;
     }
 
@@ -65,7 +65,7 @@ public class Bet {
     }
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     @Column
@@ -81,7 +81,7 @@ public class Bet {
     private String code;
 
     @Column
-    private LocalDateTime endbet;
+    private LocalDate endbet;
 
 
 }
