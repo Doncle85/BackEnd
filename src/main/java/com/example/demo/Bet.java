@@ -1,10 +1,7 @@
 package com.example.demo;
 
-import com.example.demo.Role;
-
 import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.util.List;
 
 @Entity(name = "bet")
 public class Bet {
@@ -49,12 +46,6 @@ public class Bet {
         this.endbet = endebet;
     }
 
-    @Id
-    @GeneratedValue
-    private int id;
-
-
-
     public LocalDateTime getEndbet() {
         return endbet;
     }
@@ -68,9 +59,14 @@ public class Bet {
         return bet;
     }
 
-    public void setBet(Bet bet) {
+
+    public void setBet(String bet) {
         this.bet = bet;
     }
+
+    @Id
+    @GeneratedValue
+    private int id;
 
     @Column
     private String bet;

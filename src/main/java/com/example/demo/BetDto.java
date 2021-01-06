@@ -4,35 +4,34 @@ import java.time.LocalDateTime;
 
 public class BetDto {
 
-    public String getStake() {
-        return stake;
-    }
+   public String getBet() {
+      return bet;
+   }
 
-    public void setStake(String stake) {
-        this.stake = stake;
-    }
+   public void setBet(String bet) {
+      this.bet = bet;
+   }
 
-    public LocalDateTime getEndbet() {
-        return endbet;
-    }
+   public String getStake() {
+      return stake;
+   }
 
-    public void setEndbet(LocalDateTime endbet) {
-        this.endbet = endbet;
-    }
+   public void setStake(String stake) {
+      this.stake = stake;
+   }
 
-    public String getBet() {
-        return bet;
-    }
+   public LocalDateTime getEndbet() {
+      return endbet;
+   }
 
-    public void setBet(String bet) {
-        this.bet = bet;
-    }
+   public void setEndbet(LocalDateTime endbet) {
+      this.endbet = endbet;
+   }
 
+   String bet;
 
-    String bet;
+String stake;
 
-    String stake;
-
-    LocalDateTime endbet;
+LocalDateTime endbet;
 
 }
