@@ -19,6 +19,7 @@ public class BetService {
         bet.setBet(betDto.getBet());
         bet.setStake(betDto.getStake());
         bet.setEndbet(betDto.getEndbet());
+        bet.setCreator(betDto.getCreator());
         bet.setCode(UUID.randomUUID().toString());
         betRepository.save(bet);
     }

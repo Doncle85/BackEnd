@@ -30,10 +30,20 @@ public class BetDto {
       this.endbet = endbet;
    }
 
+   public String getCreator() {
+      return creator;
+   }
+
+   public void setCreator(String creator) {
+      this.creator = creator;
+   }
+
    String bet;
 
    String stake;
 
    LocalDate endbet;
+
+   String creator;
 
 }

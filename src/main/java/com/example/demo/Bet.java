@@ -83,5 +83,16 @@ public class Bet {
     @Column
     private LocalDate endbet;
 
+    public String getCreator() {
+        return creator;
+    }
+
+    public void setCreator(String creator) {
+        this.creator = creator;
+    }
+
+    @Column
+    private String creator;
+
 
 }
