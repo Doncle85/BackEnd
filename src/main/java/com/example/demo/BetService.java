@@ -2,10 +2,13 @@ package com.example.demo;
 
 import com.example.demo.security.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
+import java.util.Optional;
 import java.util.UUID;
 
 @Service
@@ -30,11 +33,9 @@ public class BetService {
         bet.setCode(UUID.randomUUID().toString());
         Bet saveBet = betRepository.save(bet);
         Participate participate = new Participate();
-        
+        Optional<User> curentUser = userRepository.findByUsername(betDto.getCreator());
         participate.setIdbet(saveBet.getId());
-        participate.setIduser(1);
-//        participateRepository.findById("iduser");
-//        participateRepository.findById("idbet");
+        participate.setIduser(curentUser.get().getId());
         participateRepository.save(participate);
         Participate participate2 = new Participate();
         participate2.setIdbet(saveBet.getId());
