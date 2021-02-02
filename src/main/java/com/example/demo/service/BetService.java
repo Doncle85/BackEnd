@@ -1,15 +1,18 @@
-package com.example.demo;
+package com.example.demo.service;
 
+import com.example.demo.dto.BetDto;
+import com.example.demo.entity.Bet;
+import com.example.demo.entity.Participate;
+import com.example.demo.entity.User;
+import com.example.demo.repository.BetRepository;
+import com.example.demo.repository.ParticipateRepository;
 import com.example.demo.security.UserRepository;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.time.LocalDateTime;
 import java.util.Optional;
-import java.util.UUID;
 
 @Service
 public class BetService {
@@ -25,15 +28,15 @@ public class BetService {
 
     @Transactional
     public void save(BetDto betDto) {
+        Optional<User> curentUser = userRepository.findByUsername(betDto.getCreator());
         Bet bet = new Bet();
         bet.setBet(betDto.getBet());
         bet.setStake(betDto.getStake());
         bet.setEndbet(betDto.getEndbet());
-        bet.setCreator(betDto.getCreator());
-        bet.setCode(UUID.randomUUID().toString());
+        bet.setCreator(curentUser.get().getId());
+//        bet.setCode(RandomStringUtils.randomAlphanumeric(5).toUpperCase());
         Bet saveBet = betRepository.save(bet);
         Participate participate = new Participate();
-        Optional<User> curentUser = userRepository.findByUsername(betDto.getCreator());
         participate.setIdbet(saveBet.getId());
         participate.setIduser(curentUser.get().getId());
         participateRepository.save(participate);

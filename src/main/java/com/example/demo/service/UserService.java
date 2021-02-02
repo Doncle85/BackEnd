@@ -1,11 +1,11 @@
-package com.example.demo;
+package com.example.demo.service;
 
+import com.example.demo.entity.User;
 import com.example.demo.security.MyUserDetailsService;
 import com.example.demo.security.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
