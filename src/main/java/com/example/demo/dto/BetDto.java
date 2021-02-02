@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.dto;
 
 import java.time.LocalDate;
 
@@ -38,6 +38,12 @@ public class BetDto {
       this.creator = creator;
    }
 
+   public String getChallenger() { return challenger; }
+
+   public void setChallenger(String challenger) {
+      this.challenger = challenger;
+   }
+
    String bet;
 
    String stake;
@@ -45,5 +51,8 @@ public class BetDto {
    LocalDate endbet;
 
    String creator;
+
+   String challenger;
+
 
 }

@@ -1,9 +1,6 @@
-package com.example.demo;
-
-import com.example.demo.Role;
+package com.example.demo.entity;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity(name = "user")
 public class User {

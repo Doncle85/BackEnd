@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.entity;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -18,9 +18,9 @@ public class Bet {
         return winner;
     }
 
-    public String getCode() {
-        return code;
-    }
+//    public String getCode() {
+//        return code;
+//    }
 
     public void setId(int id) {
         this.id = id;
@@ -34,9 +34,9 @@ public class Bet {
         this.winner = winner;
     }
 
-    public void setCode(String code) {
-        this.code = code;
-    }
+//    public void setCode(String code) {
+//        this.code = code;
+//    }
 
     public LocalDate getEndebet() {
         return endbet;
@@ -77,22 +77,22 @@ public class Bet {
     @Column
     private String winner;
 
-    @Column
-    private String code;
+//    @Column
+//    private String code;
 
     @Column
     private LocalDate endbet;
 
-    public String getCreator() {
+    public Integer getCreator() {
         return creator;
     }
 
-    public void setCreator(String creator) {
+    public void setCreator(Integer creator) {
         this.creator = creator;
     }
 
     @Column
-    private String creator;
+    private Integer creator;
 
 
 }
