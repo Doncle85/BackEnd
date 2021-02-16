@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 
     @Repository
     public interface ParticipateRepository extends JpaRepository<Participate,String> {
-
+        void deleteByIdbet(Integer idbet);
     }
 
 

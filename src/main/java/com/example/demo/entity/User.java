@@ -28,16 +28,6 @@ public class User {
         this.email = email;
     }
 
-    // @Column
-   // private boolean enabled;
-
-    /*@ManyToMany
-    @JoinTable(
-          name = "user_roles",
-            joinColumns = @JoinColumn(name = "user_username"),
-            inverseJoinColumns = @JoinColumn(name = "role_name"))
-    private List<Role> roles;*/
-
     public String getUsername() {
         return username;
     }
@@ -53,6 +43,18 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    // @Column
+   // private boolean enabled;
+
+    /*@ManyToMany
+    @JoinTable(
+          name = "user_roles",
+            joinColumns = @JoinColumn(name = "user_username"),
+            inverseJoinColumns = @JoinColumn(name = "role_name"))
+    private List<Role> roles;*/
+
+
 
     /*public boolean isEnabled() {
         return enabled;
