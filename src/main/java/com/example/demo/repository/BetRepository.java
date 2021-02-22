@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 
 
 @Repository
-    public interface BetRepository extends JpaRepository<Bet,String> {
+    public interface BetRepository extends JpaRepository<Bet,Integer> {
 
-    }
+}

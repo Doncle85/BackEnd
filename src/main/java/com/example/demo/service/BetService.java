@@ -6,12 +6,12 @@ import com.example.demo.entity.Participate;
 import com.example.demo.entity.User;
 import com.example.demo.repository.BetRepository;
 import com.example.demo.repository.ParticipateRepository;
-import com.example.demo.security.UserRepository;
-import org.apache.commons.lang3.RandomStringUtils;
+import com.example.demo.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -25,6 +25,12 @@ public class BetService {
 
     @Autowired
     private UserRepository userRepository;
+
+    @Transactional
+    public void deleteById(int id) {
+        participateRepository.deleteByIdbet(id);
+        betRepository.deleteById(id);
+    }
 
     @Transactional
     public void save(BetDto betDto) {
@@ -46,6 +52,11 @@ public class BetService {
         participate2.setIduser(challenger.getId());
         participateRepository.save(participate2);
 }
+
+
+    public List<Bet> findAll() {
+        return betRepository.findAll();
+    }
 
 
 }
