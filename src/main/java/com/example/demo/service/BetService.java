@@ -1,6 +1,7 @@
 package com.example.demo.service;
 
 import com.example.demo.dto.BetDto;
+import com.example.demo.dto.UpdateBetDto;
 import com.example.demo.entity.Bet;
 import com.example.demo.entity.Participate;
 import com.example.demo.entity.User;
@@ -51,14 +52,22 @@ public class BetService {
         User challenger = userRepository.findByUsername(betDto.getChallenger()).get();
         participate2.setIduser(challenger.getId());
         participateRepository.save(participate2);
-}
+    }
 
 
     public List<Bet> findAll() {
         return betRepository.findAll();
     }
-
-
+    
+    @Transactional
+    public void update(UpdateBetDto bet) {
+        Optional<Bet> betOptional = betRepository.findById(bet.getId());
+        Bet currentBet = betOptional.get();
+        currentBet.setEndbet(bet.getEndbet());
+        betRepository.save(currentBet);
+    }
 }
+
+
 
 

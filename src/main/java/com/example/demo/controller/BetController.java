@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import com.example.demo.dto.BetDto;
+import com.example.demo.dto.UpdateBetDto;
 import com.example.demo.entity.Bet;
 import com.example.demo.repository.BetRepository;
 import com.example.demo.service.BetService;
@@ -30,5 +31,12 @@ public class BetController {
     void deleteBets(@PathVariable ("id") int id) {
         betService.deleteById(id);
     }
+
+    @PostMapping("/updateBet")
+    void update(@RequestBody UpdateBetDto bet){
+         betService.update(bet);
+    }
+
+
 }
 
